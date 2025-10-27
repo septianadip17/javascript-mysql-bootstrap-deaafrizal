@@ -31,6 +31,20 @@
         <% } %>
       </tbody>
     </table>
+
+    <form action="/tambah" method="post">
+      <h3>Tambah Murid Baru</h3>
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control" name="nama">
+      </div>
+      <div class="mb-3">
+        <label for="kelas" class="form-label">Kelas</label>
+        <input type="text" class="form-control" name="kelas">
+      </div>
+      <button type="submit" class="btn btn-primary">Tambah</button>
+    </form>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
