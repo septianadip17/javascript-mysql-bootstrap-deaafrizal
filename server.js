@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const app = express();
 
 app.set("view engine", "ejs");
-app.set("views", "./views");
+app.set("views", "views");
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -27,7 +27,7 @@ db.connect((err) => {
         const users = JSON.parse(JSON.stringify(results));
         console.log("Hasil database: ", users);
         app.get("/", (req, res) => {
-          res.send(users);
+          res.render("index", { users: users, title: "User List" });
         });
       }
     });
