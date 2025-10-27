@@ -21,12 +21,12 @@ db.connect((err) => {
       if (err) {
         console.error("Error executing query:", err);
       } else {
-        console.log("Hasil database:", results);
+        const users = JSON.parse(JSON.stringify(results));
+        console.log("Hasil database: ", users);
+        app.get("/", (req, res) => {
+          res.send(users);
+        });
       }
-    });
-
-    app.get("/", (req, res) => {
-      res.send("Welcome to the School Database API"); 
     });
   }
 });
